@@ -431,7 +431,7 @@
   const altitude = $('#altitude');
   const meterBar = $('.ascent__meter');
   const nowEl = $('#ascentNow');
-  const NOW = ['AI Native Academy', 'AI Professional Academy', 'Executive Academy', 'Enterprise Transformation'];
+  const NOW = ['AI Native Academy', 'AI Professional Academy', 'Executive Academy', 'Enterprise AI Transformation'];
   const PEAKS = [[400, 865], [860, 585], [1180, 380], [1435, 180]]; // summit tips in artwork px (1900×1350)
   const VB = [1900, 1350];
   let routeLen = 0;
