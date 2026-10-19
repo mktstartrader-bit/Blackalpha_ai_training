@@ -93,7 +93,7 @@
     addEventListener('pointerdown', () => cur.classList.add('is-down'));
     addEventListener('pointerup', () => cur.classList.remove('is-down'));
     document.addEventListener('pointerover', (e) => {
-      cur.classList.toggle('is-hover', !!e.target.closest('a, button, input, .chip, .inds span'));
+      cur.classList.toggle('is-hover', !!e.target.closest('a, button, input, summary, .inds span'));
     });
     document.addEventListener('pointerleave', () => gsap.set(cur, { opacity: 0 }));
     document.addEventListener('pointerenter', () => gsap.set(cur, { opacity: 1 }));
@@ -372,21 +372,6 @@
     answer.querySelector('[data-go]').addEventListener('click', (e) => { e.preventDefault(); scrollToTarget($(r.href), -24); });
     setFinder(key);
   }
-  function typeInto(text, done) {
-    if (!MOTION) { input.value = text; done && done(); return; }
-    let i = 0;
-    input.value = '';
-    const id = setInterval(() => {
-      input.value = text.slice(0, ++i);
-      if (i >= text.length) { clearInterval(id); done && done(); }
-    }, 18);
-  }
-  $$('.prompt__chips .chip').forEach((chip) => {
-    chip.addEventListener('click', () => {
-      $$('.prompt__chips .chip').forEach((c) => c.classList.toggle('is-on', c === chip));
-      typeInto(chip.dataset.fill, () => answerFor(chip.dataset.target));
-    });
-  });
   function submitPrompt() {
     const v = input.value.trim();
     if (!v) { input.focus(); promptEl.animate?.([{ translate: '0 0' }, { translate: '-6px 0' }, { translate: '6px 0' }, { translate: '0 0' }], { duration: 280 }); return; }
@@ -825,7 +810,7 @@
     youth: {
       title: 'AI Native Academy',
       desc: 'Start with AI Creator (10–12), AI Builder (13–15) or AI Founder (16–18) — or try a 2–5 day holiday bootcamp first.',
-      format: 'In-person · Holiday bootcamps', dur: 'Term programmes · 2–5 day bootcamps', out: 'A portfolio of real AI projects', cta: 'Reserve a seat',
+      format: 'In-person · Holiday bootcamps', dur: 'Term programmes', out: 'A portfolio of real AI projects', cta: 'Reserve a seat',
     },
     pro: {
       title: 'AI Professional Academy',
@@ -835,7 +820,7 @@
     exec: {
       title: 'Executive Academy',
       desc: 'Join a 1–2 day Executive Education programme, or the 6–8 week Leadership Programme built around your real challenges.',
-      format: 'In-person · Private cohorts', dur: '1–2 days or 6–8 weeks', out: "Your company's AI transformation blueprint", cta: 'Request an invitation',
+      format: 'In-person · Private cohorts', dur: '', out: "Your company's AI transformation blueprint", cta: 'Request an invitation',
     },
     ent: {
       title: 'Enterprise AI Transformation',
@@ -852,6 +837,7 @@
       $('.fcard__desc', fcard).textContent = d.desc;
       $('.fcard__format', fcard).textContent = d.format;
       $('.fcard__dur', fcard).textContent = d.dur;
+      $('.fcard__dur', fcard).parentElement.hidden = !d.dur;
       $('.fcard__out', fcard).textContent = d.out;
       $('.fcard__cta', fcard).textContent = d.cta;
       fcard.classList.remove('is-swap');
@@ -887,6 +873,5 @@
   }
 
   /* ---------- Misc ---------- */
-  $('#year').textContent = new Date().getFullYear();
   addEventListener('load', () => hasGSAP && ScrollTrigger.refresh());
 })();
