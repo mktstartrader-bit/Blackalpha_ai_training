@@ -1,3 +1,20 @@
+/* ============================================================
+   ACADEMY PAGE URLS — the one place to set them.
+   Every academy link (intro cards, learning path, footer) carries
+   data-academy="<key>". While a URL is empty the link keeps its
+   on-page #anchor. TODO: fill in when each page is live.
+   ============================================================ */
+const ACADEMY_URLS = {
+  youth: '', // AI Native Academy            TODO: update when page is live
+  pro:   '', // AI Professional Academy      TODO: update when page is live
+  exec:  '', // Executive Academy            TODO: update when page is live
+  ent:   ''  // Enterprise AI Transformation TODO: update when page is live
+};
+document.querySelectorAll('a[data-academy]').forEach((a) => {
+  const url = ACADEMY_URLS[a.dataset.academy];
+  if (url) a.href = url;
+});
+
 /* =========================================================
    BLACK ALPHA — Home interactions
    GSAP 3 + ScrollTrigger + Lenis. Every motion path is gated:

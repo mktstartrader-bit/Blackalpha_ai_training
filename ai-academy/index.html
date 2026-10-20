@@ -6,6 +6,7 @@
   <title>AI Academy | AI Training for Every Stage | Black Alpha</title>
   <meta name="description" content="Black Alpha AI Academy: AI training for students, professionals, executives and enterprises. Learn, lead and transform with AI. Online programmes." />
   <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://www.blackalphaglobal.com/ai-academy/" />
   <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
   <meta property="og:title" content="Black Alpha — Learn. Lead. Transform." />
   <meta property="og:description" content="AI academies for youth, professionals and executives, plus enterprise AI transformation. Dubai · Global." />
@@ -22,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css" />
-  <link rel="stylesheet" href="css/style.css?v=14" />
+  <link rel="stylesheet" href="css/style.css?v=15" />
 
   <script type="application/ld+json">
   {
@@ -212,11 +213,13 @@
           <p class="intro__lead" data-reveal>AI is reshaping the world, and Black Alpha AI Academy equips you with the knowledge, skills and confidence to make the most of it.</p>
           <p data-reveal>Whether you're a young learner discovering AI, a professional building new skills or a business leader preparing for the future, there's a learning path for you.</p>
           <p class="intro__k mono" data-reveal>Our programmes include:</p>
+          <!-- TODO: update when page is live. The 4 academy cards keep their #anchors until each academy page
+               exists; set the real URLs in ONE place: ACADEMY_URLS at the top of js/main.js. -->
           <ul class="intro__list" data-reveal>
-            <li><a href="#academy-youth"><b>AI Native Academy</b><span>For young minds growing up with AI.</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a></li>
-            <li><a href="#academy-pro"><b>AI Professional Academy</b><span>For professionals ready to put AI to work.</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a></li>
-            <li><a href="#academy-exec"><b>Executive Academy</b><span>For leaders looking to make smarter decisions with AI.</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a></li>
-            <li><a href="#academy-ent"><b>Enterprise AI Transformation</b><span>For organisations ready to turn AI ideas into real-world solutions.</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a></li>
+            <li><a href="#academy-youth" data-academy="youth"><b>AI Native Academy</b><span>For young minds growing up with AI.</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a></li>
+            <li><a href="#academy-pro" data-academy="pro"><b>AI Professional Academy</b><span>For professionals ready to put AI to work.</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a></li>
+            <li><a href="#academy-exec" data-academy="exec"><b>Executive Academy</b><span>For leaders looking to make smarter decisions with AI.</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a></li>
+            <li><a href="#academy-ent" data-academy="ent"><b>Enterprise AI Transformation</b><span>For organisations ready to turn AI ideas into real-world solutions.</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a></li>
           </ul>
           <p class="intro__note" data-reveal>Most learning takes place online, with customised in-person options available for selected programmes.</p>
         </div>
@@ -227,9 +230,9 @@
     <section class="manifesto section" aria-labelledby="manifestoTitle">
       <div class="container">
         <p class="eyebrow mono" data-reveal>( 01 ) — Our belief</p>
-        <h2 class="manifesto__text" id="manifestoTitle" data-highlight>
+        <p class="manifesto__text" id="manifestoTitle" data-highlight>
           We believe AI is the next superpower, but humans are the ones who give it direction. At Black Alpha AI Academy, we empower everyone to harness that power, from curious ten-year-olds discovering AI to business leaders shaping the future.
-        </h2>
+        </p>
 
         <div class="stats">
           <div class="stat" data-reveal>
@@ -271,7 +274,7 @@
                 </button>
                 <div class="stepper__body"><div>
                   <p>AI literacy starts early. Young minds learn to create, question and build with AI, with confidence and judgement.</p>
-                  <a href="#academy-youth" class="link">AI for students and teens <i class="ph-light ph-arrow-right"></i></a>
+                  <a href="#academy-youth" data-academy="youth" class="link">AI for students and teens <i class="ph-light ph-arrow-right"></i></a>
                 </div></div>
               </li>
               <li class="stepper__item" data-step="1">
@@ -283,7 +286,7 @@
                 </button>
                 <div class="stepper__body"><div>
                   <p>Professionals turn AI into everyday leverage: faster research, sharper writing, automated workflows and tools of their own.</p>
-                  <a href="#academy-pro" class="link">AI courses for professionals <i class="ph-light ph-arrow-right"></i></a>
+                  <a href="#academy-pro" data-academy="pro" class="link">AI courses for professionals <i class="ph-light ph-arrow-right"></i></a>
                 </div></div>
               </li>
               <li class="stepper__item" data-step="2">
@@ -295,7 +298,7 @@
                 </button>
                 <div class="stepper__body"><div>
                   <p>Senior leaders gain the perspective to make bolder decisions, set direction and govern AI responsibly.</p>
-                  <a href="#academy-exec" class="link">AI training for executives <i class="ph-light ph-arrow-right"></i></a>
+                  <a href="#academy-exec" data-academy="exec" class="link">AI training for executives <i class="ph-light ph-arrow-right"></i></a>
                 </div></div>
               </li>
               <li class="stepper__item" data-step="3">
@@ -307,7 +310,7 @@
                 </button>
                 <div class="stepper__body"><div>
                   <p>Enterprises move from insight to measurable impact, with a roadmap, pilots and partners who stay the course.</p>
-                  <a href="#academy-ent" class="link">AI transformation consulting <i class="ph-light ph-arrow-right"></i></a>
+                  <a href="#academy-ent" data-academy="ent" class="link">AI transformation consulting <i class="ph-light ph-arrow-right"></i></a>
                 </div></div>
               </li>
             </ol>
@@ -642,7 +645,7 @@
           <!-- Why learn -->
           <article class="cell cell--whylearn spot" data-reveal>
             <div class="cell__head">
-              <h3>Why learn AI with Black Alpha?</h3>
+              <h2 class="cell__title">Why learn AI with Black Alpha?</h2>
               <p>Black Alpha combines academy learning and consulting under one roof. As an AI training company, it connects individual skill-building with leadership development and organisational transformation, helping learners and teams apply AI in context.</p>
             </div>
           </article>
@@ -795,27 +798,29 @@
           <p>Ideas · People · Transformation.<br />For a more intelligent world.</p>
         </div>
         <div class="footer__col">
-          <h4 class="mono">Academies</h4>
-          <a href="#academy-youth">AI Native Academy</a>
-          <a href="#academy-pro">AI Professional Academy</a>
-          <a href="#academy-exec">Executive Academy</a>
-          <a href="#academy-ent">Enterprise AI Transformation</a>
+          <p class="mono footer__head">Academies</p>
+          <a href="#academy-youth" data-academy="youth">AI Native Academy</a>
+          <a href="#academy-pro" data-academy="pro">AI Professional Academy</a>
+          <a href="#academy-exec" data-academy="exec">Executive Academy</a>
+          <a href="#academy-ent" data-academy="ent">Enterprise AI Transformation</a>
         </div>
         <div class="footer__col">
-          <h4 class="mono">Company</h4>
+          <p class="mono footer__head">Company</p>
           <a href="#path">Our approach</a>
           <a href="#method">For enterprise</a>
           <a href="#why">Why Black Alpha</a>
           <a href="#contact">Contact</a>
         </div>
         <div class="footer__col">
-          <h4 class="mono">Visit</h4>
+          <p class="mono footer__head">Visit</p>
           <p>Dubai, United Arab Emirates</p>
           <a href="mailto:hello@blackalpha.ai">hello@blackalpha.ai</a>
+          <!-- TODO: social profile URLs not supplied yet. Replace each href="#" with the real profile URL and add
+               target="_blank" rel="noopener noreferrer". Facebook and X: add an icon only when a URL exists. -->
           <div class="socials">
-            <a href="#" aria-label="LinkedIn"><i class="ph-light ph-linkedin-logo"></i></a>
-            <a href="#" aria-label="Instagram"><i class="ph-light ph-instagram-logo"></i></a>
-            <a href="#" aria-label="YouTube"><i class="ph-light ph-youtube-logo"></i></a>
+            <a href="#" aria-label="Black Alpha on LinkedIn" data-social="linkedin"><i class="ph-light ph-linkedin-logo" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Black Alpha on Instagram" data-social="instagram"><i class="ph-light ph-instagram-logo" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Black Alpha on YouTube" data-social="youtube"><i class="ph-light ph-youtube-logo" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -840,6 +845,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="js/main.js?v=15"></script>
+  <script src="js/main.js?v=16"></script>
 </body>
 </html>
