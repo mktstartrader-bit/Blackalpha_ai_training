@@ -340,7 +340,7 @@ document.querySelectorAll('a[data-academy]').forEach((a) => {
       });
     }
   } else {
-    startPromptLoop();
+    setTimeout(startPromptLoop, 0); // after the prompt constants below are initialised
   }
 
   /* ---------- Ask Alpha prompt ---------- */
